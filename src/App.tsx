@@ -1,252 +1,36 @@
-import {
-  HStack,
-  Select,
-  Stack,
-  SimpleGrid,
-  Card,
-  Heading,
-  CardBody,
-  CardHeader,
-  Text,
-  Button,
-  CardFooter,
-} from "@chakra-ui/react";
+import React from 'react';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import {HStack,Select,Stack,SimpleGrid,Card,Heading,CardBody,CardHeader,Text
+  ,Button,CardFooter} from "@chakra-ui/react";
 import "./App.css";
+import Auth from "./components/common/Auth";
+import RouteLayout from './components/common/RouteLayout';
+import NotFound from './components/pages/publicRoutes/NotFound';
+import Login from './components/pages/publicRoutes/Login'
+import Welcome from './components/pages/protectedRoutes/Welcome';
+import SembraTime from './components/pages/protectedRoutes/SembraTime';
+import SembraNet from './components/pages/protectedRoutes/SembraNet';
+import SembraSchool from './components/pages/protectedRoutes/SembraSchool';
+import SembraCare from './components/pages/protectedRoutes/SembraCare';
+
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<RouteLayout />}>
+    <Route path="/" element={<SembraSchool />} />
+    <Route path="/welcome" element={<Auth><Welcome /></Auth>} />
+    <Route path="/sembratime" element={<Auth><SembraTime /></Auth>} />
+    <Route path="/sembranet" element={<Auth><SembraNet /></Auth>} />
+    <Route path="/sembraschool" element={<Auth><SembraSchool /></Auth>} />
+    <Route path="/sembracare" element={<Auth><SembraCare /></Auth>} />
+    <Route path="*" element={<NotFound />} />
+  </Route >
+))
 
 function App() {
   return (
-    // ------------------------
-    // SembraNet
-
-    /* <Card>
-<SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
-<Heading>Hello User</Heading>
-<Text align='right'>Logout</Text>
-<Text>SembraNet Dashboard</Text>
-<HStack>
-  <Card>
-  
-    <CardBody>
-      <Stack>
-      <Button colorScheme='purple' size='md'>SembraTime</Button>
-      <Button colorScheme='blue' size='md'>SembraSchool</Button>
-      <Button colorScheme='red' size='md'>SembraNet</Button>
-      <Button colorScheme='orange' size='md'>SembraCare</Button>
-      </Stack>
-    </CardBody>
-  </Card>
-  <Card>
-    
-    <CardBody>
-      
-    <Select
-    padding='1'
-  bg='red'
-  borderColor='red'
-  color='white'
-  placeholder='Search Assessment Status'
-/>
-
-<Select
-padding='1'
-  bg='red'
-  borderColor='red'
-  color='white'
-  placeholder='Re-Sync Submitted Assessment'
-/>
-<Select
-padding='1'
-  bg='red'
-  borderColor='red'
-  color='white'
-  placeholder='Search RN Assignments'
-/>
-    </CardBody>
-    
-  </Card>
-  </HStack>
-</SimpleGrid>
-</Card> */
-
-    // ---------------------------------------------------
-    // Sembra Time
-    //  <Card>
-    // <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
-    // <Heading>Hello User</Heading>
-    // <Text align='right'>Logout</Text>
-    // <Text>SembraTime Dashboard</Text>
-    // <HStack>
-    //   <Card>
-
-    //     <CardBody>
-    //       <Stack>
-    //       <Button colorScheme='purple' size='md'>SembraTime</Button>
-    //       <Button colorScheme='blue' size='md'>SembraSchool</Button>
-    //       <Button colorScheme='red' size='md'>SembraNet</Button>
-    //       <Button colorScheme='orange' size='md'>SembraCare</Button>
-    //       </Stack>
-    //     </CardBody>
-    //   </Card>
-    //   <Card>
-
-    //     <CardBody>
-
-    //     <Select
-    //     padding='1'
-    //   bg='purple'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Reset User Password'
-    // />
-
-    // <Select
-    // padding='1'
-    //   bg='purple'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Search Shift'
-    // />
-    // <Select
-    // padding='1'
-    //   bg='purple'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Reset Active Shift'
-    // />
-    // <Select
-    // padding='1'
-    //   bg='purple'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Reset Canceled Shift'
-    // />
-    // <Select
-    // padding='1'
-    //   bg='purple'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Change Check-In Time'
-    // />
-    // <Select
-    // padding='1'
-    //   bg='purple'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Change Check-In Location'
-    // />
-    //     </CardBody>
-
-    //   </Card>
-    //   </HStack>
-    // </SimpleGrid>
-    // </Card>
-
-    // ----------------------
-    // SembraCare
-
-    //  <Card>
-    // <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
-    // <Heading>Hello User</Heading>
-    // <Text align='right'>Logout</Text>
-    // <Text>SembraCare Dashboard</Text>
-    // <HStack>
-    //   <Card>
-
-    //     <CardBody>
-    //       <Stack>
-    //       <Button colorScheme='purple' size='md'>SembraTime</Button>
-    //       <Button colorScheme='blue' size='md'>SembraSchool</Button>
-    //       <Button colorScheme='red' size='md'>SembraNet</Button>
-    //       <Button colorScheme='orange' size='md'>SembraCare</Button>
-    //       </Stack>
-    //     </CardBody>
-    //   </Card>
-    //   <Card>
-
-    //     <CardBody>
-
-    //     <Select
-    //     padding='1'
-    //   bg='orange'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Badge Alterations'
-    // />
-
-    // <Select
-    // padding='1'
-    //   bg='orange'
-    //   borderColor='black'
-    //   color='white'
-    //   placeholder='Address Latitude/Longitude'
-    // />
-
-    //     </CardBody>
-
-    //   </Card>
-    //   </HStack>
-    // </SimpleGrid>
-    // </Card>
-
-    // ------------------------------
-    // SembraSchool
-
-    <Card>
-      <SimpleGrid
-        spacing={4}
-        templateColumns="repeat(auto-fill, minmax(400px, 1fr))"
-      >
-        <Heading>Hello User</Heading>
-        <Text align="right">Logout</Text>
-        <Text>SembraSchool Dashboard</Text>
-        <HStack>
-          <Card>
-            <CardBody>
-              <Stack>
-                <Button colorScheme="purple" size="md">
-                  SembraTime
-                </Button>
-                <Button colorScheme="blue" size="md">
-                  SembraSchool
-                </Button>
-                <Button colorScheme="red" size="md">
-                  SembraNet
-                </Button>
-                <Button colorScheme="orange" size="md">
-                  SembraCare
-                </Button>
-              </Stack>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <Select
-                padding="1"
-                bg="blue"
-                borderColor="white"
-                color="white"
-                placeholder="Check User Permissions"
-              />
-
-              <Select
-                padding="1"
-                bg="blue"
-                borderColor="white"
-                color="white"
-                placeholder="Change User Permissions"
-              />
-              <Select
-                padding="1"
-                bg="blue"
-                borderColor="white"
-                color="white"
-                placeholder="Change User Group"
-              />
-            </CardBody>
-          </Card>
-        </HStack>
-      </SimpleGrid>
-    </Card>
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
