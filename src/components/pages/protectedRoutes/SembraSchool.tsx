@@ -1,7 +1,6 @@
 import { HStack, Select, SimpleGrid, Card, CardBody, Text } from "@chakra-ui/react";
-import "./App.css";
-import Header from './Header'
-import NavBar from './NavBar'
+import Header from '../../common/Header'
+import NavBar from '../../common/NavBar'
 
 
 

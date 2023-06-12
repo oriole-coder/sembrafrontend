@@ -1,5 +1,4 @@
 import { Input, Stack, Button } from "@chakra-ui/react";
-  import "./App.css";
   
   function Login() {
     return (

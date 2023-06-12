@@ -1,14 +1,9 @@
 // SembraNet
 
 
-import { HStack,Select, SimpleGrid,Card, CardBody,
-    
-    Text
-    
-  } from "@chakra-ui/react";
-  import "./App.css";
-  import NavBar from './NavBar'
-  import Header from './Header'
+import { HStack,Select, SimpleGrid,Card, CardBody, Text } from "@chakra-ui/react";
+  import NavBar from '../../common/NavBar'
+  import Header from '../../common/Header'
   
   function SembraNet() {
     return (
