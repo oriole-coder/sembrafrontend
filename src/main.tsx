@@ -1,12 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import SembraSchool from './SembraSchool'
+import SembraSchool from './components/pages/protectedRoutes/SembraSchool'
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import SembraNet from './SembraNet'
-import SembraTime from './SembraTime'
-import SembraCare from './SembraCare'
-import DashLogin from './DashLogin'
+import App from './App'
 
 
 
@@ -14,19 +11,11 @@ import DashLogin from './DashLogin'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ChakraProvider>
-  
-      <DashLogin />
 
-      <SembraTime />
+      <App />
 
-      <SembraSchool />
-      
-      <SembraNet />
 
-      <SembraCare />
-   
-     
-    
-</ChakraProvider>
+
+    </ChakraProvider>
   </React.StrictMode>,
 )

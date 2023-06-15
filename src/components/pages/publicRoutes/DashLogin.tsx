@@ -1,6 +1,5 @@
 import { Stack } from "@chakra-ui/react";
-  import "./App.css";
-import LoginHeader from './LoginHeader'
+import LoginHeader from '../../common/LoginHeader'
 import Login from './Login'
   
   

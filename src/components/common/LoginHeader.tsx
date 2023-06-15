@@ -1,5 +1,4 @@
 import { Image, Stack, Heading } from "@chakra-ui/react";
-  import "./App.css";
   
   
   const LoginHeader = () => {
@@ -10,7 +9,7 @@ import { Image, Stack, Heading } from "@chakra-ui/react";
   <Image
     boxSize='150px'
     objectFit='cover'
-    src='./sembracarelogo.png'
+    src='../../assets/sembracarelogo.png'
     alt='SembraCare Logo'
   />
   
